@@ -3,7 +3,7 @@ markdown: redcarpet
 permalink: /:categories/:title
 pygments: true
 
-baseurl: /eng
+baseurl: /en
 
 excerpt_separator: ""
 comments: true
@@ -11,13 +11,13 @@ comments: true
 
 links:
   - title: About
-    url: /eng/about/
+    url: /en/about/
   - title: Articles
-    url: /eng/articles/
+    url: /en/articles/
   - title: Blog
-    url: /eng/
+    url: /en/
   - title: Category
-    url: /eng/category/
+    url: /en/category/
 
 # Personal
 description: "Andy Lau / 刘松的博客"
