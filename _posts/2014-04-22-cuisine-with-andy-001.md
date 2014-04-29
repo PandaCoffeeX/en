@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cuisine with Andy：Fragrant Bamboo Rice
+title: Cuisine tour with Andy：Fragrant Bamboo Rice
 comments: true
 category: Food
 ---
