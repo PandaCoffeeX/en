@@ -105,7 +105,7 @@ There are many different ways to set up the WSGI part, but personally I highly r
     {% highlight linux-config %}vim /home/django_projects/mysite/mysite/wsgi.py{% endhighlight %}
 
    In it, add these lines (Django sets some deefault values, so consider this carefully):
-   {% highlight python %}
+   {% highlight pycon %}
    import os
    import sys
    import site
@@ -124,12 +124,14 @@ There are many different ways to set up the WSGI part, but personally I highly r
 
    <p>Let's then set where static files go for Django:</p>
 
-    {% highlight linux-config %}mkdir /var/www/mysite/static
-   vim /home/django_projects/mysite/mysite/settings.py{% endhighlight %}
+    {% highlight linux-config %}
+    mkdir /var/www/mysite/static
+    vim /home/django_projects/mysite/mysite/settings.py{% endhighlight %}
 
    <p>Make sure these lines are set:</p>
 
-   {% highlight linux-config %}STATIC_ROOT = '/var/www/mysite/static/'
+   {% highlight linux-config %}
+   STATIC_ROOT = '/var/www/mysite/static/'
    STATIC_URL = '/static/'{% endhighlight %}
 
    <p>Next, we need to tell Django to collect the static files for use on the site:</p>
