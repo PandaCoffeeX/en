@@ -105,42 +105,42 @@ There are many different ways to set up the WSGI part, but personally I highly r
     {% highlight linux-config %}vim /home/django_projects/mysite/mysite/wsgi.py{% endhighlight %}
 
    In it, add these lines (Django sets some deefault values, so consider this carefully):
-   {% highlight pycon %}
-   import os
-   import sys
-   import site
+{% highlight py %}
+import os
+import sys
+import site
 
-   # Add the site-packages of the chosen virtualenv to work with
-   site.addsitedir('~/.virtualenvs/mysiteenv/local/lib/python2.7/site-packages')
+# Add the site-packages of the chosen virtualenv to work with
+site.addsitedir('~/.virtualenvs/mysiteenv/local/lib/python2.7/site-packages')
 
-   # Add the app's directory to the PYTHONPATH
-   sys.path.append('/home/django_projects/mysite')
-   sys.path.append('/home/django_projects/mysite/mysite')
+# Add the app's directory to the PYTHONPATH
+sys.path.append('/home/django_projects/mysite')
+sys.path.append('/home/django_projects/mysite/mysite')
 
-   os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
-   import django.core.handlers.wsgi
-   application = django.core.handlers.wsgi.WSGIHandler(){% endhighlight %}
+import django.core.handlers.wsgi
+application = django.core.handlers.wsgi.WSGIHandler(){% endhighlight %}
 
-   <p>Let's then set where static files go for Django:</p>
+<p>Let's then set where static files go for Django:</p>
 
-    {% highlight linux-config %}
-    mkdir /var/www/mysite/static
-    vim /home/django_projects/mysite/mysite/settings.py{% endhighlight %}
+{% highlight linux-config %}
+mkdir /var/www/mysite/static
+vim /home/django_projects/mysite/mysite/settings.py{% endhighlight %}
 
-   <p>Make sure these lines are set:</p>
+<p>Make sure these lines are set:</p>
 
-   {% highlight linux-config %}
-   STATIC_ROOT = '/var/www/mysite/static/'
-   STATIC_URL = '/static/'{% endhighlight %}
+{% highlight linux-config %}
+STATIC_ROOT = '/var/www/mysite/static/'
+STATIC_URL = '/static/'{% endhighlight %}
 
-   <p>Next, we need to tell Django to collect the static files for use on the site:</p>
+<p>Next, we need to tell Django to collect the static files for use on the site:</p>
 
-     {% highlight linux-config %}python manage.py collectstatic --noinput{% endhighlight %}
+{% highlight linux-config %}python manage.py collectstatic --noinput{% endhighlight %}
 
-    <p>Restart Apache again and you should be good to go:</p>
+<p>Restart Apache again and you should be good to go:</p>
 
-     {% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
+{% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
 
 
 
