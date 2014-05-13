@@ -85,27 +85,26 @@ category: Computer Science
      {% highlight linux-config %}python manage.py syncdb{% endhighlight %}
 
 
-Now, let's install and configure Apache and mod_wsgi:
+<p>Now, let's install and configure Apache and mod_wsgi:</p>
 
-     {% highlight linux-config %}sudo apt-get install apache2 apache2.2-common apache2-mpm-prefork apache2-utils libexpat1
-    sudo apt-get install libapache2-mod-wsgi{% endhighlight %}
+{% highlight linux-config %}
+sudo apt-get install apache2 apache2.2-common apache2-mpm-prefork apache2-utils libexpat1
+sudo apt-get install libapache2-mod-wsgi{% endhighlight %}
 
-    This should automatically restart Apache but just to be sure, issue this command:
+<p>This should automatically restart Apache but just to be sure, issue this command:</p>
 
-     {% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
+{% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
 
-    We need to now create a virtual host and set up WSGI. First, let's create the site in the Apache configuration:
+<p>We need to now create a virtual host and set up WSGI. First, let's create the site in the Apache configuration:</p>
 
-     {% highlight linux-config %}vim /etc/apache2/sites-available/mysite{% endhighlight %}
+{% highlight linux-config %}vim /etc/apache2/sites-available/mysite{% endhighlight %}
 
+<p>There are many different ways to set up the WSGI part, but personally I highly recommend Django docs on this part.</p> 
 
+{% highlight linux-config %}vim /home/django_projects/mysite/mysite/wsgi.py{% endhighlight %}
 
-There are many different ways to set up the WSGI part, but personally I highly recommend Django docs on this part. 
-
-    {% highlight linux-config %}vim /home/django_projects/mysite/mysite/wsgi.py{% endhighlight %}
-
-   In it, add these lines (Django sets some deefault values, so consider this carefully):
-{% highlight py %}
+<p>In it, add these lines (Django sets some deefault values, so consider this carefully):</p>
+{% highlight html %}
 import os
 import sys
 import site
