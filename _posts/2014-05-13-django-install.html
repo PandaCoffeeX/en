@@ -61,7 +61,7 @@ django-admin.py startproject andy{% endhighlight %}
 
 <p>8. The next big step is set up database</p>
 
-{% highlight mysql %} 
+{% highlight html %} 
 mysql -u root -p ***** (database name)
 
 CREATE DATABASE andy;
@@ -72,7 +72,7 @@ SHOW DATABASES;
 
 {% highlight linux-config %}vim andy/andy/settings.py{% endhighlith %}
 
-{% highlight mysql %}  
+{% highlight html %}  
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Using 'mysql' for this tutorial.
