@@ -15,46 +15,49 @@ category: Computer Science
 
 <p>1. Updating the repository</p>
 
-   {% highlight linux-config %} sudo apt-get update {% endhighlight %}
+{% highlight linux-config %} sudo apt-get update {% endhighlight %}
 
 <p>2. Personally, I prefer to use vim to write codes, so:</p>
 
-    {% highlight linux-config %}sudo apt-get install vim{% endhighlight %}
+{% highlight linux-config %}sudo apt-get install vim{% endhighlight %}
 
 <p>3. Then, you need to install pip, a tool for installing and managing python packages, (please read the quickstart if you'd like to, https://pypi.python.org/pypi/pip/)</p>
 
-    {% highlight linux-config %}sudo apt-get install python-pip python-dev build-essential
+{% highlight linux-config %}sudo apt-get install python-pip python-dev build-essential{% endhighlight %}
 
-   <p>update pip for better performance:</p>
+<p>update pip for better performance:</p>
 
-   pip install --upgrade pip {% endhighlight %}
+{% highlight linux-config %}pip install --upgrade pip {% endhighlight %}
 
 <p>4. Install database</p>
 
-    {% highlight linux-config %}pip apt-get install mysql-server{% endhighlight %}
+{% highlight linux-config %}pip apt-get install mysql-server{% endhighlight %}
 
- Install virtualenv to bypassing conflicts among different version
+<p>Install virtualenv to bypass conflicts among different version</p>
 
-    {% highlight linux-config %}pip install virtualenv{% endhighlight %}
+{% highlight linux-config %}pip install virtualenv{% endhighlight %}
 
-5. Create a virtual environment to work with: 
+<p>5. Create a virtual environment to work with: </p>
 
-    {% highlight linux-config %}mkvirtualenv /home/mysite  --no-site-packages{% endhighlight %}
+{% highlight linux-config %}
+mkvirtualenv /home/mysite  --no-site-packages{% endhighlight %}
 
-6. Install Django:
+<p>6. Install Django:</p>
 
-    {% highlight linux-config %}pip install Django==version number{% endhighlight %}
+{% highlight linux-config %}
+pip install Django==version number{% endhighlight %}
 
-7. Create a django project in virtual enviroment
+<p>7. Create a django project in virtual enviroment</p>
 
-    {% highlight linux-config %}mkdir /home/andy
-   cd /home/andy
-   source  ./bin/activate
+{% highlight linux-config %}
+mkdir /home/andy
+cd /home/andy
+source  ./bin/activate
 
-   django-admin.py startproject andy{% endhighlight %}
+django-admin.py startproject andy{% endhighlight %}
 
 
-8. The next big step is set up database
+<p>8. The next big step is set up database</p>
 
 {% highlight mysql %} 
 mysql -u root -p ***** (database name)
@@ -63,7 +66,7 @@ CREATE DATABASE andy;
 SHOW DATABASES;
 {% endhighlight %}
 
-<p>8. Edit setting.py file so that database are linked</p>
+<p>Edit setting.py file so that database are linked</p>
 
 {% highlight linux-config %}vim andy/andy/settings.py{% endhighlith %}
 
@@ -79,7 +82,9 @@ DATABASES = {
     }
 }
 {% endhighlight %}
+
 <p>9. Run the belowing command (order is highly important)</p>
+
 {% highlight linux-config %}
 sudo apt-get install python-mysqldb
 sudo apt-get install libmysqlclient-dev
