@@ -56,16 +56,19 @@ category: Computer Science
 
 8. The next big step is set up database
 
-   mysql -u root -p ***** (database name)
+{% highlight mysql %} 
+mysql -u root -p ***** (database name)
 
-   CREATE DATABASE andy;
-   SHOW DATABASES;
+CREATE DATABASE andy;
+SHOW DATABASES;
+{% endhighlight %}
 
-8. Edit setting.py file so that database are linked
+<p>8. Edit setting.py file so that database are linked</p>
 
-   vim andy/andy/settings.py
+{% highlight linux-config %}vim andy/andy/settings.py{% endhighlith %}
 
-   DATABASES = {
+{% highlight mysql %}  
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Using 'mysql' for this tutorial.
         'NAME': 'mysite',                     # Database name.
@@ -75,14 +78,15 @@ category: Computer Science
         'PORT': '',                           # Empty string for default.
     }
 }
+{% endhighlight %}
+<p>9. Run the belowing command (order is highly important)</p>
+{% highlight linux-config %}
+sudo apt-get install python-mysqldb
+sudo apt-get install libmysqlclient-dev
+pip install mysql-python{% endhighlight %}
 
-9. Run the belowing command (order is highly important)
-     {% highlight linux-config %}sudo apt-get install python-mysqldb
-    sudo apt-get install libmysqlclient-dev
-    pip install mysql-python{% endhighlight %}
-
-10. synchronise what you created earlier:
-     {% highlight linux-config %}python manage.py syncdb{% endhighlight %}
+<p>10. synchronise what you created earlier:</p>
+{% highlight linux-config %}python manage.py syncdb{% endhighlight %}
 
 
 <p>Now, let's install and configure Apache and mod_wsgi:</p>
