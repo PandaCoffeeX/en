@@ -19,39 +19,39 @@ category: Computer Science
 
 <p>2. Personally, I prefer to use vim to write codes, so:</p>
 
-   sudo apt-get install vim
+    {% highlight linux-config %}sudo apt-get install vim{% endhighlight %}
 
-3. Then, you need to install pip, a tool for installing and managing python packages, (please read the quickstart if you'd like to, https://pypi.python.org/pypi/pip/)
+<p>3. Then, you need to install pip, a tool for installing and managing python packages, (please read the quickstart if you'd like to, https://pypi.python.org/pypi/pip/)</p>
 
-   sudo apt-get install python-pip python-dev build-essential
+    {% highlight linux-config %}sudo apt-get install python-pip python-dev build-essential
 
-   update pip for better performance:
+   <p>update pip for better performance:</p>
 
-   pip install --upgrade pip 
+   pip install --upgrade pip {% endhighlight %}
 
-4. Install database
+<p>4. Install database</p>
 
-   pip apt-get install mysql-server
+    {% highlight linux-config %}pip apt-get install mysql-server{% endhighlight %}
 
-4. Install virtualenv to bypassing conflicts among different version
+ Install virtualenv to bypassing conflicts among different version
 
-   pip install virtualenv
+    {% highlight linux-config %}pip install virtualenv{% endhighlight %}
 
 5. Create a virtual environment to work with: 
 
-   mkvirtualenv /home/mysite  --no-site-packages
+    {% highlight linux-config %}mkvirtualenv /home/mysite  --no-site-packages{% endhighlight %}
 
 6. Install Django:
 
-   pip install Django==version number
+    {% highlight linux-config %}pip install Django==version number{% endhighlight %}
 
 7. Create a django project in virtual enviroment
 
-   mkdir /home/andy
+    {% highlight linux-config %}mkdir /home/andy
    cd /home/andy
    source  ./bin/activate
 
-   django-admin.py startproject andy
+   django-admin.py startproject andy{% endhighlight %}
 
 
 8. The next big step is set up database
@@ -77,32 +77,32 @@ category: Computer Science
 }
 
 9. Run the belowing command (order is highly important)
-    sudo apt-get install python-mysqldb
+     {% highlight linux-config %}sudo apt-get install python-mysqldb
     sudo apt-get install libmysqlclient-dev
-    pip install mysql-python
+    pip install mysql-python{% endhighlight %}
 
 10. synchronise what you created earlier:
-    python manage.py syncdb
+     {% highlight linux-config %}python manage.py syncdb{% endhighlight %}
 
 
 Now, let's install and configure Apache and mod_wsgi:
 
-    sudo apt-get install apache2 apache2.2-common apache2-mpm-prefork apache2-utils libexpat1
-    sudo apt-get install libapache2-mod-wsgi
+     {% highlight linux-config %}sudo apt-get install apache2 apache2.2-common apache2-mpm-prefork apache2-utils libexpat1
+    sudo apt-get install libapache2-mod-wsgi{% endhighlight %}
 
     This should automatically restart Apache but just to be sure, issue this command:
 
-    sudo service apache2 restart
+     {% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
 
     We need to now create a virtual host and set up WSGI. First, let's create the site in the Apache configuration:
 
-    vim /etc/apache2/sites-available/mysite
+     {% highlight linux-config %}vim /etc/apache2/sites-available/mysite{% endhighlight %}
 
 
 
 There are many different ways to set up the WSGI part, but personally I highly recommend Django docs on this part. 
 
-   vim /home/django_projects/mysite/mysite/wsgi.py
+    {% highlight linux-config %}vim /home/django_projects/mysite/mysite/wsgi.py{% endhighlight %}
 
    In it, add these lines (Django sets some deefault values, so consider this carefully):
 
@@ -122,24 +122,24 @@ There are many different ways to set up the WSGI part, but personally I highly r
    import django.core.handlers.wsgi
    application = django.core.handlers.wsgi.WSGIHandler()
 
-   Let's then set where static files go for Django:
+   <p>Let's then set where static files go for Django:</p>
 
-   mkdir /var/www/mysite/static
-   vim /home/django_projects/mysite/mysite/settings.py
+    {% highlight linux-config %}mkdir /var/www/mysite/static
+   vim /home/django_projects/mysite/mysite/settings.py{% endhighlight %}
 
-   Make sure these lines are set:
+   <p>Make sure these lines are set:</p>
 
    STATIC_ROOT = '/var/www/mysite/static/'
    STATIC_URL = '/static/'
 
 
-   Next, we need to tell Django to collect the static files for use on the site:
+   <p>Next, we need to tell Django to collect the static files for use on the site:</p>
 
-    python manage.py collectstatic --noinput
+     {% highlight linux-config %}python manage.py collectstatic --noinput{% endhighlight %}
 
-    Restart Apache again and you should be good to go:
+    <p>Restart Apache again and you should be good to go:</p>
 
-    sudo service apache2 restart
+     {% highlight linux-config %}sudo service apache2 restart{% endhighlight %}
 
 
 
