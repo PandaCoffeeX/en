@@ -4,6 +4,7 @@ title: Programmer Jokes
 comments: true
 category: computer science
 ---
+![illustration]({{ site.url }}/assets/images/mango.jpg)
 
 1. A Programmer started to learn Chinese calligraphy after retirement. Getting all learning tools, he wrote “Hello World!”
 
