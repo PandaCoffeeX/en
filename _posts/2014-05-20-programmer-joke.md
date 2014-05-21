@@ -5,7 +5,8 @@ comments: true
 category: computer science
 ---
 ![illustration]({{ site.url }}/assets/images/11.jpg)
-###### Pic Copyright @Mr Manggo
+###### Pic Copyright @Mr Manggo--
+
 
 1. A Programmer started to learn Chinese calligraphy after retirement. Getting all learning tools, he wrote “Hello World!”
 
@@ -14,5 +15,6 @@ category: computer science
 3. A programmer named his three children as Ctrl, Alt, and Del
 
 4. An effective way to distinguish programmer: what ‘s the antonym of the word “push” ?  a non-programmer: pull.  Programmer: pop
+
 
 
